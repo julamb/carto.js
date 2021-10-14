@@ -148,7 +148,7 @@
     "themes",
     "vendor"
   ],
-  "main": "src/index.js",
+  "main": "dist/public/carto.js",
   "config": {
     "root": "."
   },
@@ -157,7 +157,7 @@
     "test:browser": "grunt dev",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "build": "rm -rf dist/public; NODE_ENV=production webpack --progress --config webpack/webpack.config.js && NODE_ENV=production webpack --progress --config webpack/webpack.min.config.js",
+    "build": "NODE_ENV=production webpack-cli --progress --config webpack/webpack.config.js && NODE_ENV=production webpack-cli --progress --config webpack/webpack.min.config.js",
     "build:watch": "NODE_ENV=development webpack --progress -w --config webpack/webpack.config.js",
     "build:internal": "grunt build",
     "docs": "rm -rf docs/public; jsdoc --configure config/jsdoc/public-conf.json",

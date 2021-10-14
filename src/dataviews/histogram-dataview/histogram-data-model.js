@@ -134,8 +134,8 @@ module.exports = Model.extend({
     }
 
     if (parsedData.data.length > 0) {
-      parsedData.start = parsedData.data[0].start;
-      parsedData.end = parsedData.data[parsedData.data.length - 1].end;
+      parsedData.start = this.get('start') || parsedData.data[0].start;
+      parsedData.end = this.get('end') || parsedData.data[parsedData.data.length - 1].end;
     }
 
     parsedData.bins = numberOfBins;
